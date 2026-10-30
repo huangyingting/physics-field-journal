@@ -1,0 +1,32 @@
+{
+  "name": "atlas-of-physics",
+  "version": "1.0.0",
+  "description": "A bilingual physics field journal for Chinese middle and high school",
+  "scripts": {
+    "dev": "node tools/prepare-assets.mjs && next dev --hostname 0.0.0.0",
+    "build": "node tools/prepare-assets.mjs && next build",
+    "start": "next start --hostname 0.0.0.0",
+    "test": "node --test tests/*.test.mjs",
+    "test:ui": "node tools/test-app.mjs",
+    "check": "for c in kinematics newton circular energy momentum oscillations rotation fluids electrostatics gauss potential capacitors circuits magnetism induction; do node $c/checks.mjs > /dev/null || { echo FAIL $c; exit 1; }; done; node equations/check.mjs",
+    "lint": "eslint app components lib tests tools/prepare-assets.mjs tools/test-app.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.2.0",
+    "@fontsource/noto-serif-sc": "^5.2.0",
+    "next": "^16.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "puppeteer-core": "^25.16.0"
+  }
+}

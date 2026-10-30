@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+public/legacy/
+public/img/
+public/vendor/
+public/index.html
+public/*/index.html
+*.log
+shots/
+.DS_Store
+.vercel
+.env*
